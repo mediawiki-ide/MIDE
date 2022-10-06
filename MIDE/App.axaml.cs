@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using MIDE.Helpers;
 using MIDE.ViewModels;
 using MIDE.Views;
 
@@ -10,6 +11,7 @@ namespace MIDE
     {
         public override void Initialize()
         {
+            FileHelper = new FileHelper();
             AvaloniaXamlLoader.Load(this);
         }
 
@@ -25,5 +27,7 @@ namespace MIDE
 
             base.OnFrameworkInitializationCompleted();
         }
+        
+        public FileHelper FileHelper { get; set;  }
     }
 }
