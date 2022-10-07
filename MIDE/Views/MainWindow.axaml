@@ -6,7 +6,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="MIDE.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="MIDE">
+        Title="MIDE"
+        x:Name="Window">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -15,10 +16,12 @@
         <DockPanel>
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_New..." Click="New_OnClick"/>
-                    <MenuItem Header="_Open..."/>
+                    <MenuItem Header="_New..." Click="New_OnClick" />
+                    <MenuItem Header="_Open..." Click="Open_OnClick" />
+                    <MenuItem Header="_Save..." Click="Open_OnClick" />
+                    <MenuItem Header="Save _As..." Click="Open_OnClick" />
                     <Separator/>
-                    <MenuItem Header="_Exit"/>
+                    <MenuItem Header="_Exit" Click="Exit_OnClick" />
                 </MenuItem>
                 <MenuItem Header="_Edit">
                     <MenuItem Header="Copy"/>
@@ -26,7 +29,7 @@
                 </MenuItem>
             </Menu>
             
-            <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Text="" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="Wikitext"/>
         </DockPanel>
 
 

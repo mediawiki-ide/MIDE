@@ -7,11 +7,16 @@ using MIDE.Views;
 
 namespace MIDE
 {
+    public static class Globals
+    {
+        public static FileHelper FileHelper;
+    }
+    
     public partial class App : Application
     {
         public override void Initialize()
         {
-            FileHelper = new FileHelper();
+            Globals.FileHelper = new FileHelper();
             AvaloniaXamlLoader.Load(this);
         }
 
@@ -27,7 +32,5 @@ namespace MIDE
 
             base.OnFrameworkInitializationCompleted();
         }
-        
-        public FileHelper FileHelper { get; set;  }
     }
 }
